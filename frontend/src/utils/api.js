@@ -3,14 +3,10 @@
 // 🚨 المنطق الشرطي لتحديد رابط API
 let API_BASE;
 
-// التحقق من عنوان المضيف (hostname) الحالي
-if (typeof window !== 'undefined' && (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')) {
-  // ⭐️ البيئة المحلية (Local Development) - تأكد من أن المنفذ هو 4000 
-  API_BASE = 'http://localhost:4000';
-} else {
+
   // ⭐️ بيئة الإنتاج (Production) - رابط Cloudflare Worker
   API_BASE = 'https://tito.musstafamahmoud2021.workers.dev';
-}
+
 
 export async function sendSubmission(payload) {
  try {
